@@ -1,0 +1,16 @@
+.main{
+   
+    padding: 4px;
+    border-radius:10px;
+}
+li{
+    padding: 3px;
+    font-size: 14px ;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;   
+}
+.secondary{
+    box-shadow: 0 0 8px gainsboro;
+    border-radius:3px;
+}

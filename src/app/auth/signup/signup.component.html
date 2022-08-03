@@ -1,0 +1,85 @@
+<section style="  width: 100%;">
+    <div class="container pb-4 pt-4">
+        <div class="row d-flex justify-content-center align-items-center h-110">
+            <div class="col col-xl-9 ">
+                <div class="card" style="border-radius: 1rem; background-color:rgb(246, 236, 226) ;">
+                    <div class="row g-0">
+                        <div class="col-md-6 col-lg-6 d-none d-md-block">
+                            <img src="https://media.istockphoto.com/photos/social-media-marketing-concept-picture-id932616432?k=20&m=932616432&s=612x612&w=0&h=9JHEasN4HouKBpUFs3TMzuakfdpAuKQGcYffrHmHRz4="
+                                alt="login form" class="img-fluid"
+                                style="border-radius: 1rem 0 0 1rem; height: 555px;" />
+                        </div>
+                        <div class="col-md-6 col-lg-6 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+                                <form  [formGroup]="myForm" (ngSubmit)="signup(myForm)">
+                                    <div class="row">
+                                     
+                                        <div class="form-outline mb-4">
+                                          <label class="form-label" for="email">Email address</label>
+                                          <input type="text" id="email" formControlName="email" class="form-control  shadow-none outline-none" style="outline:none" />
+                                          <div style="height: 5px;">
+                                            <div
+                                                *ngIf="(myForm.get('email')?.invalid && myForm.get('email')?.touched) || myForm.get('email')?.dirty">
+                                                <small class="text-danger"
+                                                    *ngIf="myForm.get('email')?.errors?.['required']">This field is required</small>
+                                                <small class="text-danger"
+                                                    *ngIf="myForm.get('email')?.errors && !myForm.get('email')?.errors?.['required'] ">Email
+                                                    address is invalid</small>
+                                            </div>
+                                        </div>
+                                      
+                                      </div>
+                                    </div>
+                                   
+                                      <div class="form-outline mb-4">
+                                          <label class="form-label" for="phone">Phone Number</label>
+                                        <input type="text" id="phone" class="form-control" maxlength="10" formControlName="phone" class="form-control  shadow-none outline-none" style="outline:none"/>
+                                      
+                                        <div style="height: 5px;">
+                                            <div
+                                                *ngIf="(myForm.get('phone')?.invalid && myForm.get('phone')?.touched) || myForm.get('phone')?.dirty">
+                                                <small class="text-danger"
+                                                    *ngIf="myForm.get('phone')?.errors?.['required']">This field is required</small>
+                                                <small class="text-danger"
+                                                    *ngIf="myForm.get('phone')?.errors && !myForm.get('phone')?.errors?.['required'] ">Only numbers are allowed & must be of 10 digits</small>
+                                            </div>
+                                        </div>
+                                 
+                                  
+                                    </div>
+                                
+                                    <div class="form-outline mb-4">
+                                      <label class="form-label" for="pwd">Password</label> 
+                                      <input type="password" id="pwd" class="form-control" formControlName="pwd" class="form-control  shadow-none outline-none" style="outline:none"/>
+                                     
+                                      <div style="height: 5px;">
+                                        <div
+                                            *ngIf="(myForm.get('pwd')?.invalid && myForm.get('pwd')?.touched) || myForm.get('pwd')?.dirty">
+                                            <small class="text-danger"
+                                                *ngIf="myForm.get('pwd')?.errors?.['required']">This field is 
+                                                required</small>
+                                            <small class="text-danger"
+                                                *ngIf="myForm.get('pwd')?.errors && !myForm.get('pwd')?.errors?.['required'] ">Password
+                                                must contain 5 characters</small>
+                                        </div>
+                                    </div>
+                                    </div>
+                        
+                                    <button type="submit" [disabled]="myForm.invalid" class="btn btn-dark btn-block mb-4" >
+                                      Sign up
+                                    </button>
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Already have an account?
+                                        <a href="/login"
+                                            style="color: gray; text-decoration: none; text-decoration: underline;">Login
+                                            here</a>
+                                    </p>
+                                  
+                                  </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

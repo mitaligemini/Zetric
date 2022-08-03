@@ -1,0 +1,14 @@
+.main{
+    background-color:#f3f2ef; 
+    border-radius:10px;    
+}
+.secondary{
+    border-radius: 3px ;
+    box-shadow: 0 0 8px gainsboro;
+    border-radius:3px;
+}
+@media screen and (max-width: 770px) {
+    .media-sm {
+    margin-top: 60px;
+    }
+}

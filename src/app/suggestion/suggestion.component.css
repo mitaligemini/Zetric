@@ -1,0 +1,38 @@
+.but{
+    background-color:#f04f01 ;
+	color:white;
+    border-radius: 3px;
+    font-size: 12px;
+	font-weight:500;		
+	padding: 6px;
+	border:none;
+	text-transform: uppercase;
+	min-width: 90px;
+
+}
+.bt{
+    outline: 1px solid #f04f01;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 11px;
+	font-weight:500;		
+	padding: px;
+	border:none;
+	text-transform: uppercase;
+	min-width: 90px;
+}
+.bt:hover{
+    background-color: #f04f01;
+    color:white
+
+}
+.main{
+    height:280px; 
+    background-color:#f3f2ef; 
+    border-radius:10px;
+}
+.secondary{
+    box-shadow: 0 0 8px gainsboro;
+    border-radius:4px;
+}
+

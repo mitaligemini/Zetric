@@ -1,0 +1,52 @@
+.main {
+
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.input {
+    border-radius: 25px;
+    padding: 12px;
+    border: 1px solid grey;
+}
+
+.bt {
+    background-color: #f04f01;
+    color: white;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px;
+    border: none;
+    text-transform: uppercase;
+    min-width: 90px;
+    float: right;
+}
+
+.bt:hover {
+    background: #ea5105;
+}
+
+input:hover {
+    background-color: rgb(234, 231, 231);
+}
+
+.secondary {
+    height: 115px;
+    box-shadow: 0 0 5px gainsboro;
+    border-radius: 3px;
+    margin: auto;
+    width: 93%
+}
+
+.svg {
+    height: 18px;
+    margin-left: 6px;
+    margin-right: 5px;
+}
+
+@media screen and (min-width: 770px) {
+    .s {
+        padding-top: 71px;
+    }
+}

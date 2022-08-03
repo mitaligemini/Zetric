@@ -1,0 +1,8 @@
+.bt-cursor{
+    cursor: no-drop ;
+}
+
+button:disabled{
+    cursor: no-drop ;
+
+}
