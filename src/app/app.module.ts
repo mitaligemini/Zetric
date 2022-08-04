@@ -45,10 +45,10 @@ export function appInitializerFactory(authService: AuthService) {
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
     HttpClientModule,
   ],
-  
+
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -61,7 +61,7 @@ export function appInitializerFactory(authService: AuthService) {
       multi: true,
       deps: [AuthService],
     },
-    AuthService,AuthGuardService
+    AuthService, AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,4 @@
-import { PostService } from './../services/postService';
+import { PostService } from '../services/post.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

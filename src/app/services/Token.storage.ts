@@ -2,12 +2,10 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class TokenStorage {
-  private tokenKey = 'auth_Token';
-  private userKey='userDetails'
+  private tokenKey = 'auth_token';
 
-  logOut(): void {
-    localStorage.removeItem(this.tokenKey);
-    localStorage.clear();
+  getToken(): string | null {
+    return localStorage.getItem(this.tokenKey);
   }
 
   setToken(token?: string): void {
@@ -15,17 +13,8 @@ export class TokenStorage {
     localStorage.setItem(this.tokenKey, token);
   }
 
-  getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+  logOut(): void {
+    localStorage.removeItem(this.tokenKey);
+    localStorage.clear();
   }
-
-  saveUser(user?: string): void {
-    if (!user) return;
-    localStorage.setItem(this.userKey, user);
-  }
-
-  getUser(): string | null {
-    return localStorage.getItem(this.userKey);
-  }
-
 }

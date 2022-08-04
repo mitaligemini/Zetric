@@ -1,7 +1,7 @@
 import { HttpService } from './http.service';
-import { TokenStorage } from './Token.storage';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenStorage } from './Token.storage';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -12,7 +12,7 @@ export class AuthService {
         return this.httpService.post('/auth/login', { email, password }).subscribe((res) => {
             if (res) {
                 this.tokenStorage.setToken(String(res.token));
-                localStorage.setItem('user_id', res.user._id)
+                localStorage.setItem('user_id', res.user)
                 this.router.navigateByUrl('timeline')
             }
         })
@@ -22,7 +22,7 @@ export class AuthService {
         return this.httpService.post('/auth/signup', { email, phone, password }).subscribe((res) => {
             if (res) {
                 this.tokenStorage.setToken(String(res.token));
-                localStorage.setItem('user_id', res.user._id)
+                localStorage.setItem('user_id', res.user)
                 console.log("signup", res);
                 this.router.navigateByUrl('timeline')
             }
@@ -40,8 +40,8 @@ export class AuthService {
         this.tokenStorage.logOut();
     }
     getAuthorizationHeaders() {
-        const token: string | null = this.tokenStorage.getToken() || '';
-        return { Authorization: 'Bearer Token ' + token.substring(1, token.length - 1) };
+        const token: string | null = this.tokenStorage.getToken() || "";
+        return { Authorization: '' + token };
     }
 
 } 

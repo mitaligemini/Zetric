@@ -11,34 +11,31 @@ import { Router, TitleStrategy } from '@angular/router';
 export class SignupComponent implements OnInit {
 
   constructor(
-    private fb:FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
-    private authService:AuthService
-   
-   
-    ) { }
-  myForm!: FormGroup ;
+    private authService: AuthService) {}
 
-  signup(form: FormGroup) {   
-       if (this.myForm.invalid) {
-         return;
-       }
-      const email= this.myForm.value.email;
-      const phone= this.myForm.value.phone; 
-      const password= this.myForm.value.pwd;
-  
-    this.authService.signup(email, phone, password);
-  }
+  myForm!: FormGroup;
 
   ngOnInit(): void {
     this.myForm = this.fb.group({
-      email: ['', [Validators.required,Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]],
+      email: ['', [Validators.required, Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]],
       phone: ['', [Validators.required, Validators.pattern("^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$")]],
       pwd: ['', [Validators.required, Validators.minLength(5)]],
     });
   }
 
-  redirect(){
+  signup(form: FormGroup) {
+    if (this.myForm.invalid) {
+      return;
+    }
+    const email = this.myForm.value.email;
+    const phone = this.myForm.value.phone;
+    const password = this.myForm.value.pwd;
+    this.authService.signup(email!, phone!, password!);
+  }
+
+  redirect() {
     this.router.navigateByUrl('signup');
   }
 }
