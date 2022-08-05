@@ -1,7 +1,7 @@
 import { HttpService } from './http.service';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { TokenStorage } from './Token.storage';
+import { TokenStorage } from './token.storage';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
