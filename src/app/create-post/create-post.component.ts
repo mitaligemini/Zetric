@@ -9,18 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePostComponent implements OnInit {
   post: string = ""
-  user_id:string=""
+  user_id: string = ""
 
   constructor(private postService: PostService, private httpService: HttpService) { }
 
   ngOnInit(): void { }
 
-  onSubmit() {
-    this.user_id=localStorage.getItem('user_id')!;
-    this.httpService.post('/v1/create-post', {post:this.post,_userid:this.user_id }).subscribe((res) => {
-      console.log("Post ", this.post)
-      this.postService.setValue(this.post)
-    })
+  postData() {
+    this.user_id = localStorage.getItem('user_id')!;
+    if (this.post != "") {
+      this.httpService.post('/post/create-post', { post: this.post, _userid: this.user_id }).subscribe((res) => {
+        console.log("Post ", this.post)
+        this.postService.setValue(this.post)
+        this.post = ""
+      })
+    }
+    else{
+      alert("Post can't be empty")
+    }
+
     //this.postService.post=this.post;
   }
 }
