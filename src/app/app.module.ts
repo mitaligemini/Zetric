@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHeaderInterceptor } from './interceptors/header.interceptor';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 export function appInitializerFactory(authService: AuthService) {
@@ -37,6 +38,7 @@ export function appInitializerFactory(authService: AuthService) {
     ProfileComponent,
     GroupsComponent,
     AllPostComponent,
+    UserProfileComponent,
   ],
 
   imports: [

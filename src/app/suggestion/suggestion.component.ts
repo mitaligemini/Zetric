@@ -16,15 +16,10 @@ export class SuggestionComponent implements OnInit {
       //console.log("all-users",res)
       this.suggestedUsers=res;
       console.log("suggest", this.suggestedUsers)
-      this.suggestedUsers.forEach((element: { username: String; follwer_id:String }) => {
-        console.log("ele",element)
-      });
+      // this.suggestedUsers.forEach((element: { username: String; follwer_id:String }) => {
+      //   console.log("ele",element)
+      // });
   
     })
-
-   
-    
-
   }
-
 }
