@@ -1,8 +1,27 @@
-.main{
-   
-    background-color:#f3f2ef; 
-    border-radius:10px; padding:4px ;
+.main {
+
+    background-color: #f3f2ef;
+    border-radius: 10px;
+    padding: 4px;
 }
-.post{
-    background-color:#f3f2ef; 
+
+.post {
+    background-color: #f3f2ef;
+}
+
+.bt {
+    background-color: #f04f01;
+    color: white;
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px;
+    border: none;
+    text-transform: uppercase;
+    min-width: 70px;
+    float: right;
+}
+
+.bt:hover {
+    background: #ea5105;
 }
