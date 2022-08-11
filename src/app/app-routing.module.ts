@@ -1,3 +1,4 @@
+import { UpdatePostComponent } from './update-post/update-post.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { NgModule } from '@angular/core';
@@ -13,6 +14,8 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'timeline', component:TimelineComponent, canActivate:[AuthGuardService]},
   {path:'myProfile', component:UserProfileComponent, canActivate:[AuthGuardService]},
+  {path:'update/:id', component:UpdatePostComponent, canActivate:[AuthGuardService]},
+  
   {path:'**', component:LoginComponent, canActivate:[AuthGuardService]}
 ];
 
