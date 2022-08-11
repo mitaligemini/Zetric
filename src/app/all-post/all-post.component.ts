@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { HttpService } from './../services/http.service';
 import { PostService } from '../services/post.service';
 import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
 export class AllPostComponent implements OnInit {
   user_id: string = "";
 
-  constructor(private PostService: PostService, private http: HttpService) { }
+  constructor(private postService: PostService, private http: HttpService, private router:Router) { }
   allPosts: any = [];
   posts: any = []
   message = "post uploaded"
@@ -37,6 +38,11 @@ export class AllPostComponent implements OnInit {
     })
     alert("Post deleted successfully")
     location.reload()
+  }
+  updatePost(event:any){
+    console.log(event)
+    this.router.navigateByUrl(`update/${event._id}`)
+    
   }
 }
 
