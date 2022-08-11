@@ -138,3 +138,19 @@
       </div>
     </div>
   </section>
+
+const dotenv = require("dotenv")
+dotenv.config();
+// const auth = require('');
+
+mongoose.connect(
+    process.env.URI,
+    { useUnifiedTopology: true, useNewUrlParser: true },
+    (error, res) => {
+        // console.log(error);
+        // console.log(res);
+        console.log("db connected")
+    }
+);
+
+ "start": "nodemon index.js"

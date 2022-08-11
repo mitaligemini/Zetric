@@ -18,16 +18,16 @@ export class CreatePostComponent implements OnInit {
   postData() {
     this.user_id = localStorage.getItem('user_id')!;
     if (this.post != "") {
-      this.httpService.post('/post/create-post', { post: this.post, _id: this.user_id }).subscribe((res) => {
+      this.httpService.post('/post/create-post', { post: this.post, _userId: this.user_id }).subscribe((res) => {
         console.log("Post ", this.post)
-        this.postService.setValue(this.post)
+        // this.postService.setValue(this.post)
         this.post = ""
+        location.reload();
       })
     }
-    else{
+    else {
       alert("Post can't be empty")
     }
-
     //this.postService.post=this.post;
   }
 }

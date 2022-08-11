@@ -19,6 +19,12 @@ import { AuthService } from './services/auth.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthHeaderInterceptor } from './interceptors/header.interceptor';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { UpdatePostComponent } from './update-post/update-post.component';
+
 
 
 export function appInitializerFactory(authService: AuthService) {
@@ -39,6 +45,7 @@ export function appInitializerFactory(authService: AuthService) {
     GroupsComponent,
     AllPostComponent,
     UserProfileComponent,
+    UpdatePostComponent,
   ],
 
   imports: [
@@ -49,8 +56,11 @@ export function appInitializerFactory(authService: AuthService) {
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MatSliderModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
-
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
