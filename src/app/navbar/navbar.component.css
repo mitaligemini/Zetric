@@ -84,3 +84,46 @@ body {
 		display: block;
 	}
 }
+.dropbtn {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: 1px solid black;
+    cursor: pointer;
+    background: url( https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDUsrJVeiKaznE6uOjLIJSj5bMXvR1ovgCXw&usqp=CAU);
+    background-repeat: no-repeat;
+	border: none;
+    background-size: 30px 30px;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00000000;
+    min-width: 100px;
+    z-index: 1;
+    margin-top: 20px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    font-family: helvetica;
+    text-decoration: none;
+    display: block;
+  }
+  
+  hr.solid {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid #000000;
+    border-bottom: none;
+  }
+  
+  .show {
+    display: block;
+  }
